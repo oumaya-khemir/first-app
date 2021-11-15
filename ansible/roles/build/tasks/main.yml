@@ -1,4 +1,7 @@
 ---
-# build project
-- name: build app
-  shell: ng build --prod
+# Project Build playbook_dir 
+                 - name : build app
+                   shell :
+                      chdir: "{{playbook_dir}}/.."
+                      cmd : ng build --prod
+
