@@ -32,14 +32,15 @@ pipeline
 			     }
 
 	             }
-               stage ('Dokcer') {
-                      steps{
-                         script{
-                            sh "ansible-playbook ansible/docker.yml -i ansible/inventory/host.yml "
-                              }
-                             }
+                stage ('Dokcer build') {
 
-                     }
+                       steps{
+                          script{
+                    sh "ansible-playbook ansible/docker.yml -i ansible/inventory/host.yml"
+                 }
+               }
+
+        }
                
                     }          
 }
